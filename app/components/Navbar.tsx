@@ -6,7 +6,7 @@ export default function Widget() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div
-      className={`fixed top-0 left-0 w-full flex justify-center items-center z-50 transition-all duration-300 h-[74px] bg-[#fce9d1]`}
+      className={`fixed top-0 left-0 w-full flex justify-center items-center z-50 transition-all duration-300 h-[74px] bg-[var(--o-july-background)]`}
     >
       <nav className="max-w-[1200px] 2xl:max-w-[1440px] mx-auto flex justify-center w-full items-center">
         <div className="flex justify-between items-center w-full">

@@ -1,5 +1,5 @@
-import { BannerImage } from "@/models/banner";
-export const homePageData  = {
+import {BannerImage} from '@/models/banner';
+export const homePageData = {
   storeBanners: [
     {
       link: '',
@@ -14,7 +14,7 @@ export const homePageData  = {
       id: '864',
       isMobile: true,
       isDesktop: true,
-    } ,
+    },
     {
       link: '',
       url: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701411126419-imagecropper1701411124610jpg`,

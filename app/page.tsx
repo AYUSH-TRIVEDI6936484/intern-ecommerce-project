@@ -1,4 +1,4 @@
-import Hero from './components/Hero';
+import Slider from './components/slider';
 export default function Page() {
-  return <div>{<Hero />}</div>;
+  return <div>{<Slider />}</div>;
 }

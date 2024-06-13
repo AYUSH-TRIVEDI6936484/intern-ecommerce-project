@@ -2,3 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --o-july-background: #fce9d1;
+}
