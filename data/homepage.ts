@@ -1,27 +1,28 @@
-export const homePageData = {
+import { BannerImage } from "@/models/banner";
+export const homePageData  = {
   storeBanners: [
     {
       link: '',
-      url: 'store-1099/product-images/1701411106452-imagecropper1701411102843jpg',
+      url: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701411106452-imagecropper1701411102843jpg`,
       id: '863',
       isMobile: true,
       isDesktop: true,
     },
     {
       link: '',
-      url: 'store-1099/product-images/1701411120961-imagecropper1701411118789jpg',
+      url: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701411120961-imagecropper1701411118789jpg`,
       id: '864',
       isMobile: true,
       isDesktop: true,
-    },
+    } ,
     {
       link: '',
-      url: 'store-1099/product-images/1701411126419-imagecropper1701411124610jpg',
+      url: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701411126419-imagecropper1701411124610jpg`,
       id: '865',
       isMobile: true,
       isDesktop: true,
     },
-  ],
+  ] as BannerImage[],
   featuredProducts: [
     {
       title: 'Red Art Silk Short Suit',
