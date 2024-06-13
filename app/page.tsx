@@ -1,4 +1,10 @@
-import Slider from './components/slider';
+import ShopByCategories from '../components/categories';
+import Slider from '../components/slider';
 export default function Page() {
-  return <div>{<Slider />}</div>;
+  return(
+    <>
+    {<Slider />}
+    {<ShopByCategories/>}
+  </>
+  );
 }

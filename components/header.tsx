@@ -2,7 +2,7 @@
 import {useState} from 'react';
 import Image from 'next/image';
 
-export default function Widget() {
+export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div

@@ -1,13 +1,13 @@
 // import Link from 'next/link';
-import Navbar from './components/Navbar';
+import Header from '../components/header';
 import './globals.css';
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body>
-        <div className="bg-[#fce9d1] min-h-screen flex flex-col">
-          {<Navbar />}
+        <div className="bg-[var(--o-july-background)] min-h-screen flex flex-col">
+          {<Header />}
           {children}
         </div>
       </body>
