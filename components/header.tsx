@@ -16,7 +16,8 @@ export default function Header() {
               alt="logo"
               width={150}
               height={300}
-              style={{width: 'auto', height: '100%'}}
+              className='w-[auto] h-[100%]'
+              // style={{width: 'auto', height: '100%'}}
             />
           </div>
           <div className="hidden md:flex items-start space-x-8 justify-start w-[50%]">
