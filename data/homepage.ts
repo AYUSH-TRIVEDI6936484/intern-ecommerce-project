@@ -31,8 +31,7 @@ export const homePageData = {
       salesPrice: 2760,
       price: 4599,
       id: '4692',
-      featureImage:
-        `store-1099/product-images/1703525652943-scalede89b6b3rskskd15587ss22red1jpg`,
+      featureImage: `store-1099/product-images/1703525652943-scalede89b6b3rskskd15587ss22red1jpg`,
     },
     {
       title: 'Silk Semi Stitched Lehenga with Unstitched Blouse',
@@ -41,8 +40,7 @@ export const homePageData = {
       salesPrice: 5550,
       price: 13000,
       id: '4679',
-      featureImage:
-        `store-1099/product-images/1703520878299-scaled56d78b4julmlc1171jpg`,
+      featureImage: `store-1099/product-images/1703520878299-scaled56d78b4julmlc1171jpg`,
     },
     {
       title: 'Shine Dress',
@@ -51,8 +49,7 @@ export const homePageData = {
       salesPrice: 4497,
       price: 5995,
       id: '4666',
-      featureImage:
-        `store-1099/product-images/1703516051739-scaled7d66ed7d201151jpg`,
+      featureImage: `store-1099/product-images/1703516051739-scaled7d66ed7d201151jpg`,
     },
     {
       title: 'Multicolor Wave Printed Tube Playsuit',
@@ -61,8 +58,7 @@ export const homePageData = {
       salesPrice: 1148,
       price: 2295,
       id: '4648',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703501110973-scaledffc4c32dr13161jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703501110973-scaledffc4c32dr13161jpg`,
     },
     {
       title: 'Orange Birdie Jumpsuit',
@@ -71,8 +67,7 @@ export const homePageData = {
       salesPrice: 4200,
       price: 6575,
       id: '4647',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703500856992-scaled46e1d93nfdnever000003441jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703500856992-scaled46e1d93nfdnever000003441jpg`,
     },
     {
       title: 'Double Breasted Overcoat Notched Lapel Neck',
@@ -81,8 +76,7 @@ export const homePageData = {
       salesPrice: 3500,
       price: 6999,
       id: '4622',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703489731407-scaled281c704kz00092beige2jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703489731407-scaled281c704kz00092beige2jpg`,
     },
     {
       title: 'Pink Solid Fitted Midi Skirt',
@@ -91,8 +85,7 @@ export const homePageData = {
       salesPrice: 1298,
       price: 2595,
       id: '4541',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703429870157-scaled12ba58cbt07311jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703429870157-scaled12ba58cbt07311jpg`,
     },
     {
       title: 'Women  Trousers',
@@ -101,8 +94,7 @@ export const homePageData = {
       salesPrice: 1800,
       price: 2999,
       id: '4521',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703410974981-scaled382ef80m3w27085onion1jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703410974981-scaled382ef80m3w27085onion1jpg`,
     },
     {
       title: 'High Rise Flare Bootcut Jeans',
@@ -111,8 +103,7 @@ export const homePageData = {
       salesPrice: 1540,
       price: 2000,
       id: '4511',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703396536892-scaledefd1bdcoffdu000006971jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703396536892-scaledefd1bdcoffdu000006971jpg`,
     },
     {
       title: 'Super Skinny Jeggings',
@@ -121,8 +112,7 @@ export const homePageData = {
       salesPrice: 950,
       price: 1500,
       id: '4504',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703393093935-scaledc9d2a562918567011jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703393093935-scaledc9d2a562918567011jpg`,
     },
     {
       title: 'Women Play It Cool Graphic T-Shirt',
@@ -131,8 +121,7 @@ export const homePageData = {
       salesPrice: 700,
       price: 1200,
       id: '4475',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703352130873-scaled13a3a265925081jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703352130873-scaled13a3a265925081jpg`,
     },
     {
       title: 'Checked Oversized Fit Casual Shirt',
@@ -141,8 +130,7 @@ export const homePageData = {
       salesPrice: 650,
       price: 1000,
       id: '4450',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703342841645-scaled929b6daca474fdad92d38aff4d5eec16c1461dae07689ad1f2b0515ebe535be10jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703342841645-scaled929b6daca474fdad92d38aff4d5eec16c1461dae07689ad1f2b0515ebe535be10jpg`,
     },
     {
       title: 'Fancy Lace Collar Top',
@@ -151,8 +139,7 @@ export const homePageData = {
       salesPrice: 440,
       price: 1200,
       id: '4439',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703339837243-scaled5ab17db8aa2b739845b6647cdb465907ed450cc512bbc79c807208633f7c02a90jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1703339837243-scaled5ab17db8aa2b739845b6647cdb465907ed450cc512bbc79c807208633f7c02a90jpg`,
     },
     {
       title: 'Kurta & Churidar Set With Nehru Jacket',
@@ -161,8 +148,7 @@ export const homePageData = {
       salesPrice: 1700,
       price: 4200,
       id: '3413',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701353383002-scaled3d7b95850416e98068c575601869e382a55d77ec2c17ac97aad19b617023eb060webp`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701353383002-scaled3d7b95850416e98068c575601869e382a55d77ec2c17ac97aad19b617023eb060webp`,
     },
     {
       title: 'Men Trouser ',
@@ -171,8 +157,7 @@ export const homePageData = {
       salesPrice: 700,
       price: 999,
       id: '3409',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701351525040-scaled65abbea340ca1562d15fcf3451a7cf51fc9bddf0043260932b7749c8b48b40970jpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701351525040-scaled65abbea340ca1562d15fcf3451a7cf51fc9bddf0043260932b7749c8b48b40970jpg`,
     },
     {
       title: "Men's Olive Casual Sweat Shirt",
@@ -181,8 +166,7 @@ export const homePageData = {
       salesPrice: 2000,
       price: 4000,
       id: '3389',
-      featureImage:
-        `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701337877344-scaledvoss101113000xjpg`,
+      featureImage: `https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/store-1099/product-images/1701337877344-scaledvoss101113000xjpg`,
     },
     {
       title: 'Men Polo T Shirt ',
