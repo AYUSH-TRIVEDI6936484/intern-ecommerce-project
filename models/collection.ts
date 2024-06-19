@@ -9,6 +9,10 @@ export interface Product {
   featureImage: string;
 }
 
+export interface BestSeller{
+  products: Product[];
+}
+
 export interface Category {
   id: string;
   slug: string;

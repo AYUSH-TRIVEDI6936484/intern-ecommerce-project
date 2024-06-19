@@ -50,7 +50,7 @@ const ShopByCategories: React.FC<ShopByCategoriesProps> = ({homePageData}) => {
                 <Image
                   src={`https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/${category.featureImage}`}
                   alt={category.title}
-                  layout='fill'
+                  layout="fill"
                   className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105"
                 />
                 <div className={badgeClasses}>{category.title}</div>
