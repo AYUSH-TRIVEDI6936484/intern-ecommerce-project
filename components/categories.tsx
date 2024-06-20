@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
-import {Navigation} from 'swiper/modules';
-import {HomePageData} from '../models/collection';
+import { Navigation } from 'swiper/modules';
+import { HomePageData } from '../models/collection';
 
 const cardClasses = 'relative w-64 h-96 overflow-hidden group';
 const badgeClasses =
@@ -17,9 +17,9 @@ interface ShopByCategoriesProps {
   homePageData: HomePageData;
 }
 
-const ShopByCategories: React.FC<ShopByCategoriesProps> = ({homePageData}) => {
+const ShopByCategories: React.FC<ShopByCategoriesProps> = ({ homePageData }) => {
   return (
-    <div className="bg-white pt-24 pb-[4rem] pb-18">
+    <div className="bg-white pt-24 pb-18">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
@@ -37,7 +37,25 @@ const ShopByCategories: React.FC<ShopByCategoriesProps> = ({homePageData}) => {
         <Swiper
           modules={[Navigation]}
           spaceBetween={16}
-          slidesPerView={4}
+          slidesPerView={1}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          }}
           navigation={{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
