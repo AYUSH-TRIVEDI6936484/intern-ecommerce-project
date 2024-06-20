@@ -19,7 +19,7 @@ export default function Header() {
               className="w-[auto] h-[100%]"
             />
           </div>
-          <div className="hidden md:flex items-start space-x-8 justify-start w-[50%]">
+          <div className="hidden md:flex items-start space-x-6 justify-start w-[20%]">
             {['Home', 'Shop', 'Pages', 'Blog', 'Features'].map((item) => (
               <div
                 key={item}
@@ -29,7 +29,7 @@ export default function Header() {
               </div>
             ))}
           </div>
-          <div className="hidden md:flex items-center justify-end space-x-4 cursor-pointer w-[30%]">
+          <div className="hidden md:flex items-center justify-end space-x-4 cursor-pointer w-[70%] mr-24">
             <svg
               width="28"
               height="28"
