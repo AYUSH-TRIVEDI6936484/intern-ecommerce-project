@@ -1,67 +1,67 @@
-'use client'
-import React, { useState } from 'react';
+import React from 'react';
+import { Collection } from '@/models/product';
 
-const products = [
-  {
-    id: '1',
-    title: 'Nike Air Max 97 OG',
-    salesPrice: 229.00,
-    featureImage: "/assets/product_section_img/img1.jpg",
-  },
-  {
-    id: '2',
-    title: 'Hampton Linen Shirt',
-    salesPrice: 99.00,
-    featureImage: "/assets/product_section_img/img2.jpg",
-  },
-  {
-    id: '3',
-    title: 'Coastal Linen S/S Shirt',
-    salesPrice: 349.00,
-    featureImage: "/assets/product_section_img/img3.jpg",
-  },
-  {
-    id: '4',
-    title: 'Stonewashed Utility Jacket',
-    salesPrice: 529.00,
-    featureImage: "/assets/product_section_img/img4.jpg",
-  },
-];
+interface CollectionProps {
+  collection: Collection[];
+}
 
-const BestSellers = () => {
-  const [currentImage, setCurrentImage] = useState(products.map(p => p.featureImage));
-
-  const handleImageChange = (index: number) => {
-    // Logic to change the image, for demonstration it just toggles the image
-    setCurrentImage(prev => prev.map((img, i) => i === index ? '/images/another_image.png' : img));
-  };
-
+const CollectionPage: React.FC<CollectionProps> = ({ collection }) => {
   return (
-    <div className="py-8 px-4 bg-white">
-      <h1 className="text-2xl font-bold text-center mb-6">Best Sellers</h1>
-      <div className="flex justify-center mb-6 space-x-4">
-        <span className="cursor-pointer font-semibold text-gray-500 hover:text-black">Mens</span>
-        <span className="cursor-pointer font-semibold text-gray-500 hover:text-black">Womens</span>
-        <span className="cursor-pointer font-semibold text-gray-500 hover:text-black">Kids</span>
-      </div>
-      <div className="flex justify-center bg-white">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px] bg-white">
-          {products.map((product, index) => (
-            <div
-              key={product.id}
-              className="text-center cursor-pointer transform hover:scale-105 transition-transform duration-200 bg-white"
-              style={{ width: '270px', height: '425px', border: 'none' }}
-              onClick={() => handleImageChange(index)}
-            >
-              <img src={currentImage[index]} alt={product.title} className="w-full mb-4" style={{ width: '270px', height: '350px' }} />
-              <h2 className="text-lg font-semibold mb-2 text-left">{product.title}</h2>
-              <p className="text-gray-700 text-left">{`$${product.salesPrice.toFixed(2)}`}</p>
+    <div className="container mx-auto py-8 bg-white px-4 sm:px-6 lg:px-8">
+      {collection.map((col) => (
+        <div key={col.id} className="mb-8">
+          <h2
+            className="text-2xl font-bold mb-4 text-center"
+            style={{ fontSize: '34px', lineHeight: '44px', fontWeight: 500 }}
+          >
+            {col.title}
+          </h2>
+          <div className="mx-auto max-w-7xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+              {col.Product.map((product) => (
+                <div key={product.id} className="flex flex-col items-center mb-4">
+                  <div
+                    className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200 bg-white relative group"
+                    style={{ maxWidth: '220px', height: '350px' }}
+                  >
+                    <img
+                      src={`https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/${product.featureImage}`}
+                      alt={product.title}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <img
+                        src={`https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/${product.featureImage}`}
+                        alt={product.title}
+                        className="absolute inset-0 w-full h-full object-cover rounded-lg transform transition-transform duration-500 ease-in-out"
+                        style={{ transform: 'scale(1.1)' }}
+                      />
+                      <button
+                        className="absolute bottom-0 left-0 w-full bg-black text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-[#c8815f]"
+                      >
+                        Select Option
+                      </button>
+                    </div>
+                  </div>
+                  <div className="mt-4 text-center">
+                    <h3 className="text-lg font-semibold mb-2">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-700 mb-1">
+                      Sales Price: ₹{product.salesPrice}
+                    </p>
+                    <p className="text-gray-500 line-through">
+                      Price: ₹{product.price}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
 
-export default BestSellers;
+export default CollectionPage;

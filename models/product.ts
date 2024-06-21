@@ -1,15 +1,16 @@
+// types.ts
 export interface Product {
+  id: string;
   title: string;
   stockStatus: string;
   slug: string;
   type: string;
   salesPrice: number;
   price: number;
-  id: string;
   featureImage: string;
 }
 
-export interface Category {
+export interface Collection {
   id: string;
   slug: string;
   title: string;
@@ -18,7 +19,5 @@ export interface Category {
 }
 
 export interface HomePageData {
-  storePublic: {
-    collection: Category[];
-  };
+  collection: Collection[];
 }
