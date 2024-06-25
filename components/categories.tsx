@@ -4,14 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
-import { Navigation } from 'swiper/modules';
 import { HomePageData } from '../models/collection';
 
 const cardClasses = 'relative w-64 h-96 overflow-hidden group';
 const badgeClasses =
-  'absolute bottom-4 left-4 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 px-2 py-1 rounded-md shadow-lg';
-const buttonClasses =
-  'p-2 rounded-full border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700';
+  'absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 w-[150px] h-[41.6px] rounded-md shadow-lg text-center flex items-center justify-center font-semibold text-[14px]';
 
 interface ShopByCategoriesProps {
   homePageData: HomePageData;
@@ -19,23 +16,14 @@ interface ShopByCategoriesProps {
 
 const ShopByCategories: React.FC<ShopByCategoriesProps> = ({ homePageData }) => {
   return (
-    <div className="bg-white pt-24 pb-18">
+    <div className="bg-[var(--o-july-background)] pt-24 pb-18">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
             Shop by Categories
           </h2>
-          <div className="flex space-x-2">
-            <button className={`swiper-button-prev ${buttonClasses}`}>
-              <span aria-hidden="true">&lt;</span>
-            </button>
-            <button className={`swiper-button-next ${buttonClasses}`}>
-              <span aria-hidden="true">&gt;</span>
-            </button>
-          </div>
         </div>
         <Swiper
-          modules={[Navigation]}
           spaceBetween={16}
           slidesPerView={1}
           breakpoints={{
@@ -44,7 +32,7 @@ const ShopByCategories: React.FC<ShopByCategoriesProps> = ({ homePageData }) => 
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: 40,
             },
             1024: {
@@ -55,10 +43,6 @@ const ShopByCategories: React.FC<ShopByCategoriesProps> = ({ homePageData }) => 
               slidesPerView: 4,
               spaceBetween: 50,
             },
-          }}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
           }}
           className="mySwiper"
         >

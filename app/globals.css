@@ -6,3 +6,7 @@
 :root {
   --o-july-background: #fce9d1;
 }
+
+*{
+  font-family: 'Jost';
+}
