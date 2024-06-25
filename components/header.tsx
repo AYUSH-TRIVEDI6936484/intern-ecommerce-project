@@ -1,13 +1,12 @@
 'use client';
-import {useState} from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <div
-      className={`fixed top-0 left-0 w-full flex justify-center items-center z-50 transition-all duration-300 h-[74px] bg-[var(--o-july-background)]`}
-    >
+    <div className="sticky top-0 left-0 w-full flex justify-center items-center z-50 transition-all duration-300 h-[74px] bg-[var(--o-july-background)]">
       <nav className="max-w-[1200px] 2xl:max-w-[1440px] mx-auto flex justify-center w-full items-center">
         <div className="flex justify-between items-center w-full">
           <div className="flex items-center w-[20%] justify-center">
@@ -114,8 +113,28 @@ export default function Header() {
           </div>
         </div>
         {isMobileMenuOpen && (
-          <div className="md:hidden flex flex-col items-center bg-white/90 backdrop-blur-md p-4 space-y-2">
-            {['Home', 'Shop', 'Blog', 'Pages', 'Feature'].map((item) => (
+          <div className="fixed inset-0 flex flex-col items-center bg-white/90 backdrop-blur-md p-4 space-y-2 z-50">
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="self-end p-2 text-black focus:outline-none"
+            >
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 6L18 18M6 18L18 6"
+                  stroke="#000000"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>
+              </svg>
+            </button>
+            {['Home', 'Shop', 'Pages', 'Blog', 'Features'].map((item) => (
               <div
                 key={item}
                 className="text-black font-bold text-[1rem] cursor-pointer hover:text-orange-500 transition-colors duration-200 ease-in font-primary"
