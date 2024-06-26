@@ -1,7 +1,6 @@
 import React from 'react';
 import {Collection} from '@/models/product';
 
-
 interface CollectionProps {
   collection: Collection[];
 }
@@ -49,16 +48,14 @@ const CollectionPage: React.FC<CollectionProps> = ({collection}) => {
                     </div>
                   </div>
                   <div className="mt-4 text-center text-[16px]">
-                    <h3 className="text-lg mb-2">
-                      {product.title}
-                    </h3>
+                    <h3 className="text-lg mb-2">{product.title}</h3>
                     <div className="flex gap-2 items-center justify-center text-[15px]">
-                    <p className="text-gray-700 mb-1">
-                      ₹ {product.salesPrice}
-                    </p>
-                    <p className="text-gray-500 line-through">
-                      ₹ {product.price}
-                    </p>
+                      <p className="text-gray-700 mb-1">
+                        ₹ {product.salesPrice}
+                      </p>
+                      <p className="text-gray-500 line-through">
+                        ₹ {product.price}
+                      </p>
                     </div>
                   </div>
                 </div>
