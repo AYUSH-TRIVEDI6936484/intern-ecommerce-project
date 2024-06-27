@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import {Autoplay} from 'swiper/modules';
 import {Pagination} from 'swiper/modules';
-import { homePageData } from '@/data/homepage';
+import {homePageData} from '@/data/homepage';
 import {BannerImage} from '@/models/banner';
 
 export default function Slider() {
@@ -19,7 +19,7 @@ export default function Slider() {
         pagination={{clickable: true}}
         autoplay={{delay: 5000}}
         style={{height: '100vh'}}
-        className='max-w-full'
+        className="max-w-full"
       >
         {homePageData.storeBanners.map((banner: BannerImage, index: number) => (
           <SwiperSlide key={index}>
@@ -32,8 +32,7 @@ export default function Slider() {
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center animate-slide-up">
-                <div className="text-center px-8 text-white">
-                </div>
+                <div className="text-center px-8 text-white"></div>
               </div>
             </div>
           </SwiperSlide>
