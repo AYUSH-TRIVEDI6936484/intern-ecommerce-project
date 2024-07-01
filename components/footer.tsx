@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10">
+    <footer className="bg-[var(--text-black)] text-[var(--o-white)] py-10">
       <div
         className="container gap-0 mx-[129px] grid grid-cols-1 md:grid-cols-5"
         style={{width: '1200px', height: '221px'}}
@@ -179,7 +179,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-between container mx-auto mt-8 text-center text-xs border-t border-gray-700 pt-4 px-4">
+      <div className="flex justify-between container mx-auto mt-8 text-center text-xs border-t border-[var(--o-border-gray)] pt-4 px-4">
         <div className="flex justify-center space-x-4 mb-4">
           <a
             href="#"

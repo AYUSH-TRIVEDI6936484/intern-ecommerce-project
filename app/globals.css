@@ -5,6 +5,20 @@
 
 :root {
   --o-july-background: #fce9d1;
+  --o-july-bg: #e4b478;
+  --tw-text-opacity: 1;
+  --text-black: #000;
+  --text-difblack: rgb(17 17 17 / var(--tw-text-opacity));
+  --tw-border-opacity: 1;
+  --tw-border: 2;
+  --o-text-black: rgb(24 24 27 / var(--tw-text-opacity));
+  --o-bg-brown: #c8815f;
+  --o-text-orange: rgb(249 115 22 / var(--tw-text-opacity));
+  --o-black: rgb(0 0 0 / var(--tw-bg-opacity));
+  --o-white: rgb(255 255 255 / var(--tw-text-opacity));
+  --o-text-gray: rgb(55 65 81 / var(--tw-text-opacity));
+  --o-text-lightgray: rgb(107 114 128 / var(--tw-text-opacity));
+  --o-border-gray: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
 * {

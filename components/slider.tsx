@@ -32,7 +32,7 @@ export default function Slider() {
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center animate-slide-up">
-                <div className="text-center px-8 text-white"></div>
+                <div className="text-center px-8 text-[var(--o-white)]"></div>
               </div>
             </div>
           </SwiperSlide>
