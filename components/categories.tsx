@@ -1,25 +1,25 @@
 'use client';
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
-import { HomePageData } from '../models/collection';
+import {HomePageData} from '../models/collection';
 
 const cardClasses = 'relative w-64 h-96 overflow-hidden group';
 const badgeClasses =
-  'absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 w-[150px] h-[41.6px] rounded-md shadow-lg text-center flex items-center justify-center font-semibold text-[14px]';
+  'absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[var(--o-white)] text-[var(--o-text-black)] w-[150px] h-[41.6px] rounded-md shadow-lg text-center flex items-center justify-center font-semibold text-[14px]';
 
 interface ShopByCategoriesProps {
   homePageData: HomePageData;
 }
 
-const ShopByCategories: React.FC<ShopByCategoriesProps> = ({ homePageData }) => {
+const ShopByCategories: React.FC<ShopByCategoriesProps> = ({homePageData}) => {
   return (
     <div className="bg-[var(--o-july-background)] pt-24 pb-18">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+          <h2 className="text-3xl font-bold text-[var(--o-text-black)]">
             Shop by Categories
           </h2>
         </div>

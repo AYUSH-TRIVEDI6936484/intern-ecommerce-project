@@ -18,17 +18,17 @@ export default function Header() {
               className="w-[auto] h-[100%]"
             />
           </div>
-          <div className="hidden md:flex items-start space-x-6 justify-start w-[20%]">
+          <div className="hidden items-start space-x-6 justify-start w-[20%] md:flex">
             {['Home', 'Shop', 'Pages', 'Blog', 'Features'].map((item) => (
               <div
                 key={item}
-                className="text-black font-normal text-[1rem] cursor-pointer font-primary"
+                className="text-[var(--o-black)] font-normal text-[1rem] cursor-pointer font-primary"
               >
                 {item}
               </div>
             ))}
           </div>
-          <div className="hidden md:flex items-center justify-end space-x-4 cursor-pointer w-[70%] mr-24">
+          <div className="hidden items-center justify-end space-x-4 cursor-pointer w-[70%] mr-24 md:flex">
             <svg
               width="28"
               height="28"
@@ -72,7 +72,7 @@ export default function Header() {
             <div className="rounded-full cursor-pointer">
               <a
                 href="#"
-                className="relative flex text-[#111111] hover:text-[#e4b478]"
+                className="relative flex text-[var(--text-difblack)] hover:text-[var(--o-july-bg)]"
               >
                 <svg
                   width="24"
@@ -92,7 +92,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-black focus:outline-none"
+              className="text-[var(--o-black)] focus:outline-none"
             >
               <svg
                 width="24px"
@@ -116,7 +116,7 @@ export default function Header() {
           <div className="fixed inset-0 flex flex-col items-center bg-white/90 backdrop-blur-md p-4 space-y-2 z-50">
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="self-end p-2 text-black focus:outline-none"
+              className="self-end p-2 text-[var(--o-black)] focus:outline-none"
             >
               <svg
                 width="24px"
@@ -137,7 +137,7 @@ export default function Header() {
             {['Home', 'Shop', 'Pages', 'Blog', 'Features'].map((item) => (
               <div
                 key={item}
-                className="text-black font-bold text-[1rem] cursor-pointer hover:text-orange-500 transition-colors duration-200 ease-in font-primary"
+                className="text-[var(--o-black)] font-bold text-[1rem] cursor-pointer hover:text-[var(--o-text-orange)] transition-colors duration-200 ease-in font-primary"
               >
                 {item}
               </div>
