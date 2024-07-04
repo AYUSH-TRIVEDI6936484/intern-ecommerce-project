@@ -14,7 +14,7 @@ const nextConfig = {
     ],
     domains: [
       'd3fnp5f2rq7t40.cloudfront.net',
-      'ooulet-images-staging.s3.ap-south-1.amazonaws.com'
+      'ooulet-images-staging.s3.ap-south-1.amazonaws.com',
     ],
   },
 };
