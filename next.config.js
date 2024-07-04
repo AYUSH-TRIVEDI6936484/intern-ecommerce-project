@@ -12,7 +12,10 @@ const nextConfig = {
     imageSizes: [
       16, 32, 48, 64, 96, 128, 196, 256, 300, 392, 512, 640, 750, 828, 1080,
     ],
-    domains: [`${process.env.NEXT_PUBLIC_CDN_ADDRESS}`],
+    domains: [
+      'd3fnp5f2rq7t40.cloudfront.net',
+      'ooulet-images-staging.s3.ap-south-1.amazonaws.com'
+    ],
   },
 };
 
