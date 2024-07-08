@@ -19,6 +19,8 @@
   --o-text-gray: rgb(55 65 81 / var(--tw-text-opacity));
   --o-text-lightgray: rgb(107 114 128 / var(--tw-text-opacity));
   --o-border-gray: rgb(55 65 81 / var(--tw-border-opacity));
+  --o-dark-gray: rgb(31 41 55 / var(--tw-bg-opacity));
+  --light-gray: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 * {
