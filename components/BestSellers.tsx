@@ -1,6 +1,6 @@
 import React from 'react';
 import {Collection} from '@/models/product';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 interface CollectionProps {
   collection: Collection[];
