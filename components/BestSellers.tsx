@@ -1,7 +1,6 @@
 import React from 'react';
 import {Collection} from '@/models/product';
-import Image from 'next/image';
-
+// import Image from 'next/image';
 
 interface CollectionProps {
   collection: Collection[];
@@ -26,13 +25,13 @@ const CollectionPage: React.FC<CollectionProps> = ({collection}) => {
                   className="flex flex-col items-center mb-4"
                 >
                   <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200 bg-[var(--o-white)] relative group max-w-[220px] h-[350px]">
-                    <Image
+                    <img
                       src={`https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/${product.featureImage}`}
                       alt={product.title}
                       className="w-full h-full object-cover rounded-lg"
                     />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Image
+                      <img
                         src={`https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/${product.featureImage}`}
                         alt={product.title}
                         className="absolute inset-0 w-full h-full object-cover rounded-lg transform transition-transform duration-500 ease-in-out"
