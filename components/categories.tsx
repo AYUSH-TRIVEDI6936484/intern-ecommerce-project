@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
-import {HomePageData} from '../models/collection';
+import { HomePageData } from '../models/collection';
 
 const cardClasses = 'relative w-64 h-96 overflow-hidden group';
 const badgeClasses =
@@ -14,7 +14,7 @@ interface ShopByCategoriesProps {
   homePageData: HomePageData;
 }
 
-const ShopByCategories: React.FC<ShopByCategoriesProps> = ({homePageData}) => {
+const ShopByCategories: React.FC<ShopByCategoriesProps> = ({ homePageData }) => {
   return (
     <div className="bg-[var(--o-july-background)] pt-24 pb-18">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,17 +27,25 @@ const ShopByCategories: React.FC<ShopByCategoriesProps> = ({homePageData}) => {
           spaceBetween={16}
           slidesPerView={1}
           breakpoints={{
-            640: {
+            320: {
               slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            480: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 2,
               spaceBetween: 20,
             },
             768: {
               slidesPerView: 3,
-              spaceBetween: 40,
+              spaceBetween: 30,
             },
             1024: {
-              slidesPerView: 3,
-              spaceBetween: 50,
+              slidesPerView: 4,
+              spaceBetween: 40,
             },
             1280: {
               slidesPerView: 4,
