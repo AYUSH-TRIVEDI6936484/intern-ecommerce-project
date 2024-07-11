@@ -1,12 +1,12 @@
 'use client';
-import {useState} from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {Navigation, Pagination, Autoplay} from 'swiper/modules';
-import {singleVariable} from '../../data/variableproductdata';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { singleVariable } from '../../data/variableproductdata';
 
 export default function Home() {
   const [selectedSize, setSelectedSize] = useState('');
@@ -56,13 +56,13 @@ export default function Home() {
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={10}
               slidesPerView={1}
-              autoplay={{delay: 2000}}
+              autoplay={{ delay: 2000 }}
               pagination={{
                 clickable: true,
                 bulletClass: 'swiper-pagination-bullet',
                 bulletActiveClass: 'swiper-pagination-bullet-active',
               }}
-              className="w-[387px] h-[690px]"
+              className="w-[300px] h-[450px] sm:w-[350px] sm:h-[550px] md:w-[387px] md:h-[690px]"
             >
               {galleryImages.map((src, index) => (
                 <SwiperSlide key={index}>
@@ -76,23 +76,30 @@ export default function Home() {
                 </SwiperSlide>
               ))}
             </Swiper>
+            <style jsx global>{`
+            .swiper-pagination-bullet {
+              background: black;
+            }
+            .swiper-pagination-bullet-active {
+              background: white;
+            }
+          `}</style>
           </div>
-          <div className="ml-8 text-center md:text-left">
-            <h1 className="text-[34px]">{singleVariable.title}</h1>
+          <div className="md:ml-8 text-center md:text-left mt-4 md:mt-0">
+            <h1 className="text-[20px] md:text-[34px]">{singleVariable.title}</h1>
             <div className="flex flex-col items-center md:items-start my-2">
-              <span className="text-xl font-bold">${singleVariable.price}</span>
-              <div className="text-sm text-[var(--o-text-lightgray)] mt-2">
-                <span className="font-bold">30</span> guests are viewing this
-                product
+              <span className="text-lg md:text-xl font-bold">${singleVariable.price}</span>
+              <div className="text-xs md:text-sm text-[var(--o-text-lightgray)] mt-2">
+                <span className="font-bold">30</span> guests are viewing this product
               </div>
             </div>
             <div className="my-4">
-              <h2 className="text-lg font-semibold">Size:</h2>
+              <h2 className="text-sm md:text-lg font-semibold">Size:</h2>
               <div className="flex justify-center md:justify-start space-x-2 mt-2">
                 {sizes.map((size) => (
                   <button
                     key={size}
-                    className={`border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 ${selectedSize === size ? 'bg-gray-200' : ''}`}
+                    className={`border border-gray-300 rounded px-2 py-1 md:px-4 md:py-2 hover:bg-gray-100 ${selectedSize === size ? 'bg-gray-200' : ''}`}
                     onClick={() => {
                       setSelectedSize(size);
                       setSelectedColor('');
@@ -106,13 +113,13 @@ export default function Home() {
             </div>
             {selectedSize && (
               <div className="my-4">
-                <h2 className="text-lg font-semibold">Color:</h2>
+                <h2 className="text-sm md:text-lg font-semibold">Color:</h2>
                 <div className="flex justify-center md:justify-start space-x-2 mt-2">
                   {colors.map((color) => (
                     <button
                       key={color}
-                      className={`border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 ${selectedColor === color ? 'bg-gray-200' : ''}`}
-                      style={{backgroundColor: color}}
+                      className={`border border-gray-300 rounded px-2 py-1 md:px-4 md:py-2 hover:bg-gray-100 ${selectedColor === color ? 'bg-gray-200' : ''}`}
+                      style={{ backgroundColor: color }}
                       onClick={() => {
                         setSelectedColor(color);
                         setSelectedWeight('');
@@ -124,12 +131,12 @@ export default function Home() {
             )}
             {selectedColor && (
               <div className="my-4">
-                <h2 className="text-lg font-semibold">Weight:</h2>
+                <h2 className="text-sm md:text-lg font-semibold">Weight:</h2>
                 <div className="flex justify-center md:justify-start space-x-2 mt-2">
                   {weights.map((weight) => (
                     <button
                       key={weight}
-                      className={`border border-gray-300 rounded px-4 py-2 hover:bg-gray-100 ${selectedWeight === weight ? 'bg-gray-200' : ''}`}
+                      className={`border border-gray-300 rounded px-2 py-1 md:px-4 md:py-2 hover:bg-gray-100 ${selectedWeight === weight ? 'bg-gray-200' : ''}`}
                       onClick={() => setSelectedWeight(weight)}
                     >
                       {weight}
@@ -139,20 +146,19 @@ export default function Home() {
               </div>
             )}
             <div className="flex justify-center md:justify-start space-x-4 my-4">
-              <button className="bg-[var(--light-gray)] text-[var(--o-white)] px-4 py-2 rounded">
+              <button className="bg-[var(--light-gray)] text-[var(--o-white)] px-2 py-1 md:px-4 md:py-2 rounded">
                 Add to cart
               </button>
-              <button className="bg-[var(--o-text-orange)] text-[var(--o-white)] px-4 py-2 rounded">
+              <button className="bg-[var(--o-text-orange)] text-[var(--o-white)] px-2 py-1 md:px-4 md:py-2 rounded">
                 Buy Now
               </button>
             </div>
-            <div className="my-4 flex justify-center md:justify-start gap-7">
-              <h2 className="text-lg font-semibold">Secure checkout with:</h2>
+            <div className="my-4 flex justify-center md:justify-start gap-4 md:gap-7">
+              <h2 className="text-sm md:text-lg font-semibold">Secure checkout with:</h2>
               <img
                 src="https://july.uxper.co/fashion01/wp-content/uploads/sites/2/2022/04/payment-logo_e0eb93d9-1f43-41d8-9810-09ed5b649156.webp"
                 alt="Payment Methods"
-                width={300}
-                height={30}
+                className="w-24 md:w-72"
               />
             </div>
             <div className="my-4 text-center md:text-left">
@@ -181,8 +187,8 @@ export default function Home() {
             </button>
           </div>
           {activeTab === 'description' && (
-            <div className="bg-gray-100 p-4 rounded shadow">
-              <p>{singleVariable.description}</p>
+            <div className="bg-gray-100 p-2 md:p-4 rounded shadow">
+              <p className="text-sm md:text-base">{singleVariable.description}</p>
             </div>
           )}
           {activeTab === 'reviews' && (
@@ -190,10 +196,7 @@ export default function Home() {
               <h2 className="text-2xl font-bold mb-4">Add your review</h2>
               <form>
                 <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
-                    htmlFor="name"
-                  >
+                  <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="name">
                     Name *
                   </label>
                   <input
@@ -204,10 +207,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
-                    htmlFor="email"
-                  >
+                  <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="email">
                     Email *
                   </label>
                   <input
@@ -218,40 +218,38 @@ export default function Home() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-bold mb-2">
-                    Your rating
+                  <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="rating">
+                    Rating *
                   </label>
-                  <div className="flex items-center">
-                    {[...Array(5)].map((star, index) => (
-                      <svg
-                        key={index}
-                        onClick={() => setRating(index + 1)}
-                        className={`w-6 h-6 cursor-pointer ${
-                          index < rating ? 'text-yellow-500' : 'text-gray-300'
-                        }`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.975a1 1 0 00.95.69h4.175c.969 0 1.372 1.24.588 1.81l-3.382 2.46a1 1 0 00-.364 1.118l1.286 3.975c.3.921-.755 1.688-1.538 1.118l-3.382-2.46a1 1 0 00-1.175 0l-3.382 2.46c-.783.57-1.838-.197-1.538-1.118l1.286-3.975a1 1 0 00-.364-1.118L2.05 9.402c-.784-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.975z" />
-                      </svg>
-                    ))}
-                  </div>
+                  <select
+                    id="rating"
+                    value={rating}
+                    onChange={(e) => setRating(parseInt(e.target.value))}
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  >
+                    <option value="0">Select rating</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very good</option>
+                    <option value="5">5 - Excellent</option>
+                  </select>
                 </div>
                 <div className="mb-4">
-                  <label
-                    className="block text-gray-700 text-sm font-bold mb-2"
-                    htmlFor="review"
-                  >
+                  <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="review">
                     Your review *
                   </label>
                   <textarea
                     id="review"
-                    placeholder="Write your review"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24"
+                    placeholder="Write your review here"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   ></textarea>
                 </div>
-                <div className="mb-4">
-                  <button className="bg-[var(--o-text-orange)] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <div className="flex items-center justify-between">
+                  <button
+                    type="submit"
+                    className="bg-[var(--light-gray)] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  >
                     Submit
                   </button>
                 </div>
@@ -260,17 +258,6 @@ export default function Home() {
           )}
         </div>
       </div>
-      <style
-        jsx
-        global
-      >{`
-        .swiper-pagination-bullet {
-          background: black;
-        }
-        .swiper-pagination-bullet-active {
-          background: white;
-        }
-      `}</style>
     </>
   );
 }
