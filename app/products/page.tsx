@@ -1,12 +1,12 @@
 'use client';
-import { useState } from 'react';
+import {useState} from 'react';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { singleVariable } from '../../data/variableproductdata';
+import {Navigation, Pagination, Autoplay} from 'swiper/modules';
+import {singleVariable} from '../../data/variableproductdata';
 
 export default function Home() {
   const [selectedSize, setSelectedSize] = useState('');
@@ -56,7 +56,7 @@ export default function Home() {
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={10}
               slidesPerView={1}
-              autoplay={{ delay: 2000 }}
+              autoplay={{delay: 2000}}
               pagination={{
                 clickable: true,
                 bulletClass: 'swiper-pagination-bullet',
@@ -76,21 +76,29 @@ export default function Home() {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <style jsx global>{`
-            .swiper-pagination-bullet {
-              background: black;
-            }
-            .swiper-pagination-bullet-active {
-              background: white;
-            }
-          `}</style>
+            <style
+              jsx
+              global
+            >{`
+              .swiper-pagination-bullet {
+                background: black;
+              }
+              .swiper-pagination-bullet-active {
+                background: white;
+              }
+            `}</style>
           </div>
           <div className="md:ml-8 text-center md:text-left mt-4 md:mt-0">
-            <h1 className="text-[20px] md:text-[34px]">{singleVariable.title}</h1>
+            <h1 className="text-[20px] md:text-[34px]">
+              {singleVariable.title}
+            </h1>
             <div className="flex flex-col items-center md:items-start my-2">
-              <span className="text-lg md:text-xl font-bold">${singleVariable.price}</span>
+              <span className="text-lg md:text-xl font-bold">
+                ${singleVariable.price}
+              </span>
               <div className="text-xs md:text-sm text-[var(--o-text-lightgray)] mt-2">
-                <span className="font-bold">30</span> guests are viewing this product
+                <span className="font-bold">30</span> guests are viewing this
+                product
               </div>
             </div>
             <div className="my-4">
@@ -119,7 +127,7 @@ export default function Home() {
                     <button
                       key={color}
                       className={`border border-gray-300 rounded px-2 py-1 md:px-4 md:py-2 hover:bg-gray-100 ${selectedColor === color ? 'bg-gray-200' : ''}`}
-                      style={{ backgroundColor: color }}
+                      style={{backgroundColor: color}}
                       onClick={() => {
                         setSelectedColor(color);
                         setSelectedWeight('');
@@ -154,7 +162,9 @@ export default function Home() {
               </button>
             </div>
             <div className="my-4 flex justify-center md:justify-start gap-4 md:gap-7">
-              <h2 className="text-sm md:text-lg font-semibold">Secure checkout with:</h2>
+              <h2 className="text-sm md:text-lg font-semibold">
+                Secure checkout with:
+              </h2>
               <img
                 src="https://july.uxper.co/fashion01/wp-content/uploads/sites/2/2022/04/payment-logo_e0eb93d9-1f43-41d8-9810-09ed5b649156.webp"
                 alt="Payment Methods"
@@ -188,7 +198,9 @@ export default function Home() {
           </div>
           {activeTab === 'description' && (
             <div className="bg-gray-100 p-2 md:p-4 rounded shadow">
-              <p className="text-sm md:text-base">{singleVariable.description}</p>
+              <p className="text-sm md:text-base">
+                {singleVariable.description}
+              </p>
             </div>
           )}
           {activeTab === 'reviews' && (
@@ -196,7 +208,10 @@ export default function Home() {
               <h2 className="text-2xl font-bold mb-4">Add your review</h2>
               <form>
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="name">
+                  <label
+                    className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                    htmlFor="name"
+                  >
                     Name *
                   </label>
                   <input
@@ -207,7 +222,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="email">
+                  <label
+                    className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                    htmlFor="email"
+                  >
                     Email *
                   </label>
                   <input
@@ -218,7 +236,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="rating">
+                  <label
+                    className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                    htmlFor="rating"
+                  >
                     Rating *
                   </label>
                   <select
@@ -236,7 +257,10 @@ export default function Home() {
                   </select>
                 </div>
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="review">
+                  <label
+                    className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                    htmlFor="review"
+                  >
                     Your review *
                   </label>
                   <textarea

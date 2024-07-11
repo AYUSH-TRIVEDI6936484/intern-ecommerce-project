@@ -1,11 +1,11 @@
 'use client';
-import { useState } from 'react';
-import { singleProduct } from '../../../data/singleproductdata';
+import {useState} from 'react';
+import {singleProduct} from '../../../data/singleproductdata';
 import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination, Autoplay } from 'swiper/modules';
+import {Pagination, Autoplay} from 'swiper/modules';
 
 interface GalleryImage {
   location: string;
@@ -31,7 +31,7 @@ export default function Home() {
             modules={[Pagination, Autoplay]}
             spaceBetween={10}
             slidesPerView={1}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
+            autoplay={{delay: 2000, disableOnInteraction: false}}
             pagination={{
               clickable: true,
               bulletClass: 'swiper-pagination-bullet',
@@ -51,7 +51,10 @@ export default function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <style jsx global>{`
+          <style
+            jsx
+            global
+          >{`
             .swiper-pagination-bullet {
               background: black;
             }
@@ -63,9 +66,12 @@ export default function Home() {
         <div className="md:ml-8 mt-4 md:mt-0 text-center md:text-left">
           <h1 className="text-[20px] md:text-[34px]">{singleProduct.title}</h1>
           <div className="flex flex-col items-center md:items-start my-2">
-            <span className="text-lg md:text-xl font-bold">₹{singleProduct.price}</span>
+            <span className="text-lg md:text-xl font-bold">
+              ₹{singleProduct.price}
+            </span>
             <div className="ml-0 md:ml-4 text-xs md:text-sm text-[var(--o-text-lightgray)] mt-2">
-              <span className="font-bold">30</span> guests are viewing this product
+              <span className="font-bold">30</span> guests are viewing this
+              product
             </div>
           </div>
           <div className="flex justify-center md:justify-start space-x-4 my-4">
@@ -77,7 +83,9 @@ export default function Home() {
             </button>
           </div>
           <div className="my-4 flex justify-center md:justify-start gap-4 md:gap-7">
-            <h2 className="text-sm md:text-lg font-semibold">Secure checkout with:</h2>
+            <h2 className="text-sm md:text-lg font-semibold">
+              Secure checkout with:
+            </h2>
             <img
               src="https://july.uxper.co/fashion01/wp-content/uploads/sites/2/2022/04/payment-logo_e0eb93d9-1f43-41d8-9810-09ed5b649156.webp"
               alt="Payment Logos"
@@ -112,73 +120,85 @@ export default function Home() {
         </div>
         {activeTab === 'description' && (
           <div className="bg-gray-100 p-2 md:p-4 rounded shadow">
-          <p className="text-sm md:text-base">{singleProduct.description}</p>
-        </div>
+            <p className="text-sm md:text-base">{singleProduct.description}</p>
+          </div>
         )}
         {activeTab === 'reviews' && (
           <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4">Add your review</h2>
-          <form>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="name">
-                Name *
-              </label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Name"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="email">
-                Email *
-              </label>
-              <input
-                id="email"
-                type="email"
-                placeholder="Email"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="rating">
-                Rating *
-              </label>
-              <select
-                id="rating"
-                value={rating}
-                onChange={(e) => setRating(parseInt(e.target.value))}
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              >
-                <option value="0">Select rating</option>
-                <option value="1">1 - Poor</option>
-                <option value="2">2 - Fair</option>
-                <option value="3">3 - Good</option>
-                <option value="4">4 - Very good</option>
-                <option value="5">5 - Excellent</option>
-              </select>
-            </div>
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm md:text-base font-bold mb-2" htmlFor="review">
-                Your review *
-              </label>
-              <textarea
-                id="review"
-                placeholder="Write your review here"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              ></textarea>
-            </div>
-            <div className="flex items-center justify-between">
-              <button
-                type="submit"
-                className="bg-[var(--light-gray)] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
-        </div>
+            <h2 className="text-2xl font-bold mb-4">Add your review</h2>
+            <form>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                  htmlFor="name"
+                >
+                  Name *
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Name"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                  htmlFor="email"
+                >
+                  Email *
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                  htmlFor="rating"
+                >
+                  Rating *
+                </label>
+                <select
+                  id="rating"
+                  value={rating}
+                  onChange={(e) => setRating(parseInt(e.target.value))}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                >
+                  <option value="0">Select rating</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very good</option>
+                  <option value="5">5 - Excellent</option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                  htmlFor="review"
+                >
+                  Your review *
+                </label>
+                <textarea
+                  id="review"
+                  placeholder="Write your review here"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                ></textarea>
+              </div>
+              <div className="flex items-center justify-between">
+                <button
+                  type="submit"
+                  className="bg-[var(--light-gray)] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
         )}
       </div>
     </div>
