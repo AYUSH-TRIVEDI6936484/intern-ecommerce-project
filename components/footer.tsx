@@ -1,11 +1,12 @@
+'use client';
 import React from 'react';
 
 const Footer = () => {
   return (
     <footer className="bg-[var(--text-black)] text-[var(--o-white)] py-10">
       <div
-        className="container gap-0 mx-[129px] grid grid-cols-1 md:grid-cols-5"
-        style={{width: '1200px', height: '221px'}}
+        className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-4"
+        style={{width: '100%', maxWidth: '1200px', height: 'auto'}}
       >
         <div className="p-[15px]">
           <h3 className="font-semibold text-xl mb-4">About Shop</h3>
@@ -179,8 +180,8 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-between container mx-auto mt-8 text-center text-xs border-t border-[var(--o-border-gray)] pt-4 px-4">
-        <div className="flex justify-center space-x-4 mb-4">
+      <div className="flex flex-col md:flex-row justify-between container mx-auto mt-8 text-center text-xs border-t border-[var(--o-border-gray)] pt-4 px-4">
+        <div className="flex justify-center space-x-4 mb-4 md:mb-0">
           <a
             href="#"
             target="_blank"
@@ -207,12 +208,83 @@ const Footer = () => {
             <i className="link-icon fab fa-cc-paypal"></i>
           </a>
         </div>
-        <p className="text-xl">©2022 July. All rights reserved</p>
-        <div className="flex justify-center space-x-4 mt-2">
+        <p className="text-xl md:text-base">©2022 July. All rights reserved</p>
+        <div className="flex justify-center space-x-4 mt-2 md:mt-0">
           <span>EN</span>
           <span>USD</span>
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 1280px) {
+          .container {
+            padding: 0 20px;
+          }
+        }
+        @media (max-width: 768px) {
+          .container {
+            width: 100%;
+          }
+          .grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+        @media (max-width: 480px) {
+          .container {
+            width: 100%;
+          }
+          .grid {
+            grid-template-columns: 1fr;
+          }
+          .text-xl {
+            font-size: 1.25rem;
+          }
+          .text-base {
+            font-size: 0.875rem;
+          }
+        }
+        @media (max-width: 425px) {
+          .container {
+            padding: 0 10px;
+          }
+          .grid {
+            grid-template-columns: 1fr;
+          }
+          .text-xl {
+            font-size: 1.125rem;
+          }
+          .text-base {
+            font-size: 0.875rem;
+          }
+        }
+        @media (max-width: 375px) {
+          .container {
+            padding: 0 5px;
+          }
+          .grid {
+            grid-template-columns: 1fr;
+          }
+          .text-xl {
+            font-size: 1rem;
+          }
+          .text-base {
+            font-size: 0.75rem;
+          }
+        }
+        @media (max-width: 320px) {
+          .container {
+            padding: 0 5px;
+          }
+          .grid {
+            grid-template-columns: 1fr;
+          }
+          .text-xl {
+            font-size: 0.875rem;
+          }
+          .text-base {
+            font-size: 0.75rem;
+          }
+        }
+      `}</style>
     </footer>
   );
 };

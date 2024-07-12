@@ -24,8 +24,8 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('description');
 
   return (
-    <div className="p-4 max-w-[1200px] 2xl:max-w-[1440px] mx-auto">
-      <div className="flex inset-y-0 left-5 gap-5">
+    <div className="p-4 max-w-[1200px] 2xl:max-w-[1440px] mx-auto flex flex-col items-center">
+      <div className="flex flex-col md:flex-row gap-5 items-center">
         <div className="flex items-center">
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -37,16 +37,16 @@ export default function Home() {
               bulletClass: 'swiper-pagination-bullet',
               bulletActiveClass: 'swiper-pagination-bullet-active',
             }}
-            className="w-[387px] h-[690px]"
+            className="w-[300px] h-[450px] sm:w-[350px] sm:h-[550px] md:w-[387px] md:h-[690px]"
           >
             {galleryImages.map((image: GalleryImage, index: number) => (
               <SwiperSlide key={index}>
                 <Image
                   src={image.location}
                   alt={singleProduct.title}
-                  width={387}
-                  height={690}
-                  className="object-cover"
+                  width={300}
+                  height={450}
+                  className="object-cover w-full h-full"
                 />
               </SwiperSlide>
             ))}
@@ -63,33 +63,36 @@ export default function Home() {
             }
           `}</style>
         </div>
-        <div className="ml-8">
-          <h1 className="text-[34px]">{singleProduct.title}</h1>
-          <div className="flex items-center my-2">
-            <span className="text-xl font-bold">₹{singleProduct.price}</span>
-            <div className="ml-4 text-sm text-[var(--o-text-lightgray)]">
+        <div className="md:ml-8 mt-4 md:mt-0 text-center md:text-left">
+          <h1 className="text-[20px] md:text-[34px]">{singleProduct.title}</h1>
+          <div className="flex flex-col items-center md:items-start my-2">
+            <span className="text-lg md:text-xl font-bold">
+              ₹{singleProduct.price}
+            </span>
+            <div className="ml-0 md:ml-4 text-xs md:text-sm text-[var(--o-text-lightgray)] mt-2">
               <span className="font-bold">30</span> guests are viewing this
               product
             </div>
           </div>
-          <div className="flex space-x-4 my-4">
-            <button className="bg-[var(--o-text-gray)] text-[var(--o-white)] px-4 py-2 rounded">
+          <div className="flex justify-center md:justify-start space-x-4 my-4">
+            <button className="bg-[var(--o-text-gray)] text-[var(--o-white)] px-2 py-1 md:px-4 md:py-2 rounded">
               Add to cart
             </button>
-            <button className="bg-[var(--o-text-orange)] text-[var(--o-white)] px-4 py-2 rounded">
+            <button className="bg-[var(--o-text-orange)] text-[var(--o-white)] px-2 py-1 md:px-4 md:py-2 rounded">
               Buy Now
             </button>
           </div>
-          <div className="my-4 flex gap-7">
-            <h2 className="text-lg font-semibold">Secure checkout with:</h2>
+          <div className="my-4 flex justify-center md:justify-start gap-4 md:gap-7">
+            <h2 className="text-sm md:text-lg font-semibold">
+              Secure checkout with:
+            </h2>
             <img
               src="https://july.uxper.co/fashion01/wp-content/uploads/sites/2/2022/04/payment-logo_e0eb93d9-1f43-41d8-9810-09ed5b649156.webp"
               alt="Payment Logos"
-              width={300}
-              height={30}
+              className="w-24 md:w-72"
             />
           </div>
-          <div className="my-4">
+          <div className="my-4 text-center md:text-left text-xs md:text-base">
             <div className="text-[var(--light-gray)]">
               Delivers in: <span className="font-bold">3-7 Working Days</span>
             </div>
@@ -116,8 +119,8 @@ export default function Home() {
           </button>
         </div>
         {activeTab === 'description' && (
-          <div className="bg-gray-100 p-4 rounded shadow">
-            <p>{singleProduct.description}</p>
+          <div className="bg-gray-100 p-2 md:p-4 rounded shadow">
+            <p className="text-sm md:text-base">{singleProduct.description}</p>
           </div>
         )}
         {activeTab === 'reviews' && (
@@ -126,7 +129,7 @@ export default function Home() {
             <form>
               <div className="mb-4">
                 <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
+                  className="block text-gray-700 text-sm md:text-base font-bold mb-2"
                   htmlFor="name"
                 >
                   Name *
@@ -140,7 +143,7 @@ export default function Home() {
               </div>
               <div className="mb-4">
                 <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
+                  className="block text-gray-700 text-sm md:text-base font-bold mb-2"
                   htmlFor="email"
                 >
                   Email *
@@ -153,40 +156,44 @@ export default function Home() {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                  Your rating
+                <label
+                  className="block text-gray-700 text-sm md:text-base font-bold mb-2"
+                  htmlFor="rating"
+                >
+                  Rating *
                 </label>
-                <div className="flex items-center">
-                  {[...Array(5)].map((star, index) => (
-                    <svg
-                      key={index}
-                      onClick={() => setRating(index + 1)}
-                      className={`w-6 h-6 cursor-pointer ${
-                        index < rating ? 'text-yellow-500' : 'text-gray-300'
-                      }`}
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.975a1 1 0 00.95.69h4.175c.969 0 1.372 1.24.588 1.81l-3.382 2.46a1 1 0 00-.364 1.118l1.286 3.975c.3.921-.755 1.688-1.538 1.118l-3.382-2.46a1 1 0 00-1.175 0l-3.382 2.46c-.783.57-1.838-.197-1.538-1.118l1.286-3.975a1 1 0 00-.364-1.118L2.05 9.402c-.784-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.975z" />
-                    </svg>
-                  ))}
-                </div>
+                <select
+                  id="rating"
+                  value={rating}
+                  onChange={(e) => setRating(parseInt(e.target.value))}
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                >
+                  <option value="0">Select rating</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very good</option>
+                  <option value="5">5 - Excellent</option>
+                </select>
               </div>
               <div className="mb-4">
                 <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
+                  className="block text-gray-700 text-sm md:text-base font-bold mb-2"
                   htmlFor="review"
                 >
                   Your review *
                 </label>
                 <textarea
                   id="review"
-                  placeholder="Write your review"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24"
+                  placeholder="Write your review here"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 ></textarea>
               </div>
-              <div className="mb-4">
-                <button className="bg-[var(--o-text-orange)] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+              <div className="flex items-center justify-between">
+                <button
+                  type="submit"
+                  className="bg-[var(--light-gray)] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
                   Submit
                 </button>
               </div>

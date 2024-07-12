@@ -1,6 +1,6 @@
+'use client';
 import React from 'react';
 import {Collection} from '@/models/product';
-// import Image from 'next/image';
 
 interface CollectionProps {
   collection: Collection[];
@@ -14,17 +14,17 @@ const CollectionPage: React.FC<CollectionProps> = ({collection}) => {
           key={col.id}
           className="mb-8"
         >
-          <h2 className="text-[34px] leading-[44px] font-medium mb-4 text-center">
+          <h2 className="text-2xl sm:text-[34px] leading-[30px] sm:leading-[44px] font-medium mb-4 text-center">
             {col.title}
           </h2>
           <div className="mx-auto max-w-7xl">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
               {col.Product.map((product) => (
                 <div
                   key={product.id}
                   className="flex flex-col items-center mb-4"
                 >
-                  <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200 bg-[var(--o-white)] relative group max-w-[220px] h-[350px]">
+                  <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-200 bg-[var(--o-white)] relative group max-w-[150px] sm:max-w-[200px] md:max-w-[220px] h-[250px] sm:h-[300px]">
                     <img
                       src={`https://${process.env.NEXT_PUBLIC_CDN_ADDRESS}/${product.featureImage}`}
                       alt={product.title}
@@ -42,8 +42,10 @@ const CollectionPage: React.FC<CollectionProps> = ({collection}) => {
                       </button>
                     </div>
                   </div>
-                  <div className="mt-4 text-center text-[16px]">
-                    <h3 className="text-lg mb-2">{product.title}</h3>
+                  <div className="mt-4 text-center text-[16px] w-full">
+                    <h3 className="text-lg mb-2 truncate sm:whitespace-normal sm:overflow-visible sm:text-clip">
+                      {product.title}
+                    </h3>
                     <div className="flex gap-2 items-center justify-center text-[15px]">
                       <p className="text-[var(--o-text-gray)] mb-1">
                         ₹ {product.salesPrice}
